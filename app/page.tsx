@@ -16,13 +16,13 @@ export default function HomePage() {
         <section className="bg-primary text-white py-24 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              VOK University JNAL – The Voice of Knowledge
+              VOK University JOURNAL – The Voice of Knowledge
             </h1>
             <p className="text-xl md:text-2xl mb-8">
               Documenting, Informing, Inspiring.
             </p>
             <p className="text-lg max-w-3xl mx-auto">
-              Welcome to VOK University JNAL (VUJ), the premier student-driven media and knowledge hub dedicated to broadcasting campus news, publishing research, celebrating achievements, and amplifying student voices.
+              Welcome to VOK University JOURNAL (VUJ), the premier student-driven media and knowledge hub dedicated to broadcasting campus news, publishing research, celebrating achievements, and amplifying student voices.
             </p>
           </div>
         </section>

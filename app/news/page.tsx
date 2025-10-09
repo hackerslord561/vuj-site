@@ -3,7 +3,7 @@ import { getStoriesBySection } from '@/lib/firestore';
 import StoryCard from '@/components/StoryCard';
 
 export const metadata: Metadata = {
-    title: 'News & Reports - VOK University JNAL',
+    title: 'News & Reports - VOK University JOURNAL',
     description: 'Coverage of university activities, student politics, administration updates, and national issues affecting higher education.',
 };
 

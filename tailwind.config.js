@@ -9,11 +9,11 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#1E3A8A',
-                    dark: '#1e40af',
+                    DEFAULT: '#1e8a23',
+                    dark: '#e4fa04',
                 },
                 secondary: {
-                    DEFAULT: '#F59E0B',
+                    DEFAULT: '#f60000',
                 },
             },
             fontFamily: {

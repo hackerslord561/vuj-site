@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
     }
 
     return {
-        title: `${story.title} - VOK University JNAL`,
+        title: `${story.title} - VOK University JOURNAL`,
         description: story.excerpt,
     };
 }

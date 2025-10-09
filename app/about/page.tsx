@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'About Us - VOK University JNAL',
-    description: 'Learn about VOK University JNAL, our vision, mission, and core values.',
+    title: 'About Us - VOK University JOURNAL',
+    description: 'Learn about VOK University JOURNAL, our vision, mission, and core values.',
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
                 <section className="mb-12">
                     <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
                     <p className="text-lg text-gray-700">
-                        The VOK University JNAL (VUJ) is a knowledge and media platform established to serve as the
+                        The VOK University JOURNAL (VUJ) is a knowledge and media platform established to serve as the
                         central hub of student journalism, publications, and academic expression within the various
                         Universities.
                     </p>

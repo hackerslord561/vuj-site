@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Our Team - VOK University JNAL',
-    description: 'Meet the dedicated team behind VOK University JNAL.',
+    title: 'Our Team - VOK University JOURNAL',
+    description: 'Meet the dedicated team behind VOK University JOURNAL.',
 };
 
 const teamMembers = {
     editorial: [
         {
-            name: 'Sarah Johnson',
+            name: 'Hackerslord',
             role: 'Chief Editor',
             imageUrl: 'https://placeholder-image-service.onrender.com/image/300x300?prompt=Professional portrait of a young female chief editor in business attire with confident expression&id=e813e509-2e04-4cfe-9271-1535c3f8d419&customer_id=cus_SUZXDYudUX1iyQ',
         },

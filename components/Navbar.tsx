@@ -29,7 +29,7 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center">
                         <Image
                             src="/vuj.png"
-                            alt="VOK University JNAL Logo"
+                            alt="VOK University JOURNAL Logo"
                             width={120}
                             height={48}
                             className="h-12 w-auto"

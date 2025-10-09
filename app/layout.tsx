@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'VOK University JNAL - The Voice of Knowledge',
+    title: 'VOK University JOURNAL - The Voice of Knowledge',
     description: 'The premier student-driven media and knowledge hub dedicated to broadcasting campus news, publishing research, celebrating achievements, and amplifying student voices.',
 };
 
