@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getStoryBySlug, incrementStoryViews } from '@/lib/firestore';
 import { format } from 'date-fns';
+import React from 'react';
 
 interface StoryPageProps {
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: StoryPageProps): Promise<Metadata> {
-    const story = await getStoryBySlug(params.slug);
+    const { slug } = await params;
+    const story = await getStoryBySlug(slug);
 
     if (!story) {
         return {
@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
 }
 
 export default async function StoryPage({ params }: StoryPageProps) {
-    const story = await getStoryBySlug(params.slug);
+    const { slug } = await params;
+    const story = await getStoryBySlug(slug);
 
     if (!story) {
         notFound();
     }
 
-    // Increment views (fire and forget)
     incrementStoryViews(story.id).catch(console.error);
 
     return (
@@ -41,7 +41,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
                     {story.section.replace('-', ' ')}
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     {story.title}
                 </h1>
 
@@ -58,7 +58,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
                 <div
                     className="prose prose-lg max-w-none"
-                    dangerouslySetInnerHTML={{__html: story.content}}
+                    dangerouslySetInnerHTML={{ __html: story.content }}
                 />
 
                 <div className="mt-8 text-sm text-gray-500">

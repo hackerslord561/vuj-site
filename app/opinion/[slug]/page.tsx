@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getStoryBySlug, incrementStoryViews } from '@/lib/firestore';
 import { format } from 'date-fns';
+import React from 'react';
 
 interface StoryPageProps {
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: StoryPageProps): Promise<Metadata> {
-    const story = await getStoryBySlug(params.slug);
+    const { slug } = await params;
+    const story = await getStoryBySlug(slug);
 
     if (!story) {
         return {
@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
 }
 
 export default async function StoryPage({ params }: StoryPageProps) {
-    const story = await getStoryBySlug(params.slug);
+    const { slug } = await params;
+    const story = await getStoryBySlug(slug);
 
     if (!story) {
         notFound();
