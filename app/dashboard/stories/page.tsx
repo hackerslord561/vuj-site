@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getAllStories, deleteStory } from '@/lib/firestore';
 import { Story } from '@/types';
-import { format } from 'date-fns';
 import { Pencil, Trash2, Plus } from 'lucide-react';
 
 export default function StoriesPage() {
@@ -12,7 +11,7 @@ export default function StoriesPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        loadStories();
+        void loadStories();
     }, []);
 
     const loadStories = async () => {
@@ -24,7 +23,7 @@ export default function StoriesPage() {
     const handleDelete = async (id: string) => {
         if (confirm('Are you sure you want to delete this story?')) {
             await deleteStory(id);
-            loadStories();
+            await loadStories();
         }
     };
 

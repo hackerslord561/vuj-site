@@ -12,7 +12,7 @@ interface StoryFormData {
     title: string;
     excerpt: string;
     author: string;
-    section: string;
+    section: 'news' | 'research' | 'campus-life' | 'opinion' | 'multimedia' | 'special-features';
     published: boolean;
 }
 
@@ -27,38 +27,42 @@ export default function NewStoryPage() {
         setLoading(true);
 
         try {
+            console.log('Starting story creation...', data);
+
             let imageUrl = 'https://placeholder-image-service.onrender.com/image/800x400?prompt=University campus news article featured image with academic buildings and students&id=e813e509-2e04-4cfe-9271-1535c3f8d419&customer_id=cus_SUZXDYudUX1iyQ';
 
-            // Upload image if provided
             if (imageFile) {
+                console.log('Uploading image...');
                 const storageRef = ref(storage, `stories/${Date.now()}_${imageFile.name}`);
                 await uploadBytes(storageRef, imageFile);
                 imageUrl = await getDownloadURL(storageRef);
+                console.log('Image uploaded:', imageUrl);
             }
 
-            // Generate slug from title
             const slug = data.title
                 .toLowerCase()
                 .replace(/[^a-z0-9]+/g, '-')
                 .replace(/(^-|-$)/g, '');
+
+            console.log('Creating story with slug:', slug);
 
             await createStory({
                 title: data.title,
                 content,
                 excerpt: data.excerpt,
                 author: data.author,
-                section: data.section as any,
+                section: data.section,
                 slug,
                 imageUrl,
                 published: data.published,
             });
 
+            console.log('Story created successfully!');
             router.push('/dashboard/stories');
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error creating story:', error);
-            alert('Failed to create story');
-        } finally {
-            setLoading(false);
+            alert(`Failed to create story: ${error.message || 'Unknown error'}`);
+            setLoading(false); // ⚠️ Important: reset loading on error
         }
     };
 
