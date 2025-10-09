@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import 'react-quill/dist/quill.snow.css';
+import type { ReactQuillProps } from 'react-quill-new';
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const ReactQuill = dynamic<ReactQuillProps>(() => import('react-quill-new'), { ssr: false });
 
 interface RichTextEditorProps {
     value: string;
@@ -12,6 +12,10 @@ interface RichTextEditorProps {
 }
 
 export default function RichTextEditor({ value, onChange }: RichTextEditorProps) {
+    useEffect(() => {
+        import('react-quill-new/dist/quill.snow.css');
+    }, []);
+
     const modules = {
         toolbar: [
             [{ header: [1, 2, 3, false] }],
