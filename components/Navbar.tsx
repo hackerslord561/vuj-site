@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -25,8 +26,15 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold">
-                        VUJ
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/vuj.png"
+                            alt="VOK University JNAL Logo"
+                            width={120}
+                            height={48}
+                            className="h-12 w-auto"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
