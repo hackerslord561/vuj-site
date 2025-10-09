@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getCurrentUser, loginWithEmail, loginWithGoogle } from '@/lib/auth';
+import { getCurrentUser, loginWithEmail } from '@/lib/auth';
 import Sidebar from '@/components/Sidebar';
 
 export default function DashboardLayout({
@@ -42,21 +42,6 @@ export default function DashboardLayout({
             router.refresh();
         } catch (err: any) {
             setError(err.message || 'Failed to login');
-        } finally {
-            setLoggingIn(false);
-        }
-    };
-
-    const handleGoogleLogin = async () => {
-        setError('');
-        setLoggingIn(true);
-
-        try {
-            await loginWithGoogle();
-            setShowLogin(false);
-            router.refresh();
-        } catch (err: any) {
-            setError(err.message || 'Failed to login with Google');
         } finally {
             setLoggingIn(false);
         }
@@ -112,19 +97,9 @@ export default function DashboardLayout({
                             disabled={loggingIn}
                             className="w-full bg-primary text-white py-2 rounded-md hover:bg-opacity-90 disabled:opacity-50"
                         >
-                            {loggingIn ? 'Logging in...' : 'Login with Email'}
+                            {loggingIn ? 'Logging in...' : 'Login'}
                         </button>
                     </form>
-
-                    <div className="my-4 text-center text-gray-500">or</div>
-
-                    <button
-                        onClick={handleGoogleLogin}
-                        disabled={loggingIn}
-                        className="w-full bg-white border-2 border-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-50 disabled:opacity-50"
-                    >
-                        Login with Google
-                    </button>
 
                     <p className="mt-6 text-sm text-gray-600 text-center">
                         Contact admin to create an account
