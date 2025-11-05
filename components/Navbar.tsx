@@ -50,7 +50,7 @@ export default function Navbar() {
                         ))}
                         <Link
                             href="/dashboard"
-                            className="bg-secondary px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors"
+                            className="bg-secondary px-4 py-2 text-white rounded-md hover:bg-opacity-90 transition-colors"
                         >
                             Dashboard
                         </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
                         ))}
                         <Link
                             href="/dashboard"
-                            className="block mt-4 bg-secondary px-4 py-2 rounded-md text-center hover:bg-opacity-90 transition-colors"
+                            className="block mt-4 bg-secondary px-4 py-2 rounded-md text-white text-center hover:bg-opacity-90 transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
                             Dashboard
