@@ -15,9 +15,9 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="bg-primary text-white py-24 px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               University JOURNAL – The Voice of Knowledge
-            </h1>
+            </h2>
             <p className="text-xl md:text-2xl mb-8">
               Documenting, Informing, Inspiring.
             </p>
