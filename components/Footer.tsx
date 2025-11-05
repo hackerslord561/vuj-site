@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     {/* About Section */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4">VOK University JOURNAL</h3>
+                        <h3 className="text-xl font-bold mb-4">VOK University Journal</h3>
                         <p className="text-sm">
                             The premier student-driven media and knowledge hub dedicated to documenting, informing, and inspiring.
                         </p>
@@ -47,7 +47,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="border-t border-white/20 pt-8 text-center text-sm">
-                    <p>&copy; {new Date().getFullYear()} VOK University JOURNAL. All rights reserved. Made with ❤️ by Hackerslord Studios</p>
+                    <p>&copy; {new Date().getFullYear()} VOK University Journal. All rights reserved. Made with ❤️ by Hackerslord Studios</p>
                 </div>
             </div>
         </footer>
